@@ -1,0 +1,17 @@
+.app{
+  display: block;
+  width: 75%;
+  margin: auto;
+}
+h1{
+  text-align: center;
+}
+.movie{
+  display:block;
+  font-size: 20px;
+  border-style: solid;
+  padding: 5px;
+  margin: 10px auto;
+  overflow: auto;
+  width: 90%
+}
