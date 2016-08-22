@@ -2,8 +2,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      allMovies: testData,
-      visableMovies: testData
+      allMovies: [],
+      visableMovies: [],
     };
   }
 
@@ -22,10 +22,22 @@ class App extends React.Component {
     });
   }
 
+  submitMovie(movieTitle) {
+    var newMovie = {
+      Title: movieTitle
+    };
+    var newState = this.state.allMovies.concat(newMovie);
+    this.setState({
+      allMovies: newState,
+      visableMovies: newState
+    });
+  }
+
   render() {
     return (
       <div>
         <h1>Movie List!</h1>
+        <Add submit={this.submitMovie.bind(this)}/>
         <Search movies={this.state.allMovies} searchFunc={this.search.bind(this)}/>
         <MovieList movies={this.state.visableMovies} />
       </div>
